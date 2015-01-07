@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *networkActivityIndicator;
 
 @end
 
@@ -16,12 +20,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Changed comment after first commit
+    self.webView.delegate = self;
+    self.urlTextField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self loadWebPage:textField.text];
+    return true;
 }
+
+-(void)loadWebPage:(NSString *)string
+{
+    NSURL *urlString = [NSURL URLWithString:string];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:urlString];
+    [self.webView loadRequest:urlRequest];
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    self.networkActivityIndicator.hidden = false;
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.networkActivityIndicator.hidden = true;
+}
+
+
 
 @end
