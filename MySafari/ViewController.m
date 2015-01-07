@@ -14,9 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *networkActivityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
-
-
-@property int pageCount;
+@property (weak, nonatomic) IBOutlet UIButton *forwardButton;
 
 @end
 
@@ -28,7 +26,6 @@
     self.urlTextField.delegate = self;
     [self loadWebPage:@"http://butt.systems"];
     self.backButton.enabled = false;
-    self.pageCount = 0;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -43,7 +40,6 @@
     NSURL *urlString = [NSURL URLWithString:string];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:urlString];
     [self.webView loadRequest:urlRequest];
-    self.pageCount++;
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
@@ -54,15 +50,24 @@
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.networkActivityIndicator.hidden = true;
+    if (![self.webView canGoBack]) {
+        self.backButton.enabled = NO;
+    }
+    if ([self.webView canGoBack]) {
+        self.backButton.enabled = YES;
+    }
+    if (![self.webView canGoForward]) {
+        self.forwardButton.enabled = NO;
+    }
+    if ([self.webView canGoForward]) {
+        self.forwardButton.enabled = YES;
+    }
+
 }
 
 - (IBAction)onBackButtonPressed:(UIButton *)sender
 {
     [self.webView goBack];
-    self.pageCount--;
-    if (self.pageCount == 0) {
-        sender.enabled = NO;
-    }
 }
 - (IBAction)onForwardButtonPressed:(UIButton *)sender
 {

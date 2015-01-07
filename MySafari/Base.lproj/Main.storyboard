@@ -95,6 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="WfU-7O-nax" id="agQ-hC-tiT"/>
+                        <outlet property="forwardButton" destination="kZN-LG-R6e" id="ckc-R9-Jd2"/>
                         <outlet property="networkActivityIndicator" destination="gF2-Av-qjy" id="hUX-J8-Tho"/>
                         <outlet property="urlTextField" destination="gLE-zB-TS1" id="UeQ-tN-znM"/>
                         <outlet property="webView" destination="u6H-zD-gMR" id="Znh-l8-ixc"/>
