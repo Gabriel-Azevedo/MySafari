@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate>
+@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
@@ -24,13 +24,22 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     self.urlTextField.delegate = self;
+
     [self loadWebPage:@"http://butt.systems"];
     self.backButton.enabled = false;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self loadWebPage:textField.text];
+    if (![textField.text hasPrefix:@"http://"]) {
+        NSString *httpString = @"http://";
+        NSString *correctedString = [httpString stringByAppendingString:textField.text];
+        [self loadWebPage:correctedString];
+    }
+    else
+    {
+        [self loadWebPage:textField.text];
+    }
     self.backButton.enabled = true;
     return true;
 }
@@ -81,6 +90,15 @@
 - (IBAction)onReloadButtonPressed:(UIButton *)sender
 {
     [self.webView reload];
+}
+
+- (IBAction)onAddButtonPressed:(UIButton *)sender
+{
+    UIAlertView *alert = [UIAlertView new];
+    alert.delegate = self;
+    alert.title = @"Coming soon!";
+    [alert addButtonWithTitle:@"Dismiss"];
+    [alert show];
 }
 
 
