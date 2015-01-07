@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6H-zD-gMR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLE-zB-TS1">
@@ -30,6 +30,51 @@
                                 <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <color key="color" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWX-y2-AOX">
+                                <rect key="frame" x="0.0" y="461" width="320" height="107"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-7O-nax">
+                                        <rect key="frame" x="107" y="39" width="30" height="30"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onBackButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3dZ-uf-RRD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZN-LG-R6e">
+                                        <rect key="frame" x="183" y="39" width="30" height="30"/>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onForwardButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FLj-wk-CsJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvg-2D-25L">
+                                        <rect key="frame" x="145" y="39" width="30" height="30"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onStopLoadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7SI-U4-JQS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU2-hA-MSD">
+                                        <rect key="frame" x="50" y="39" width="49" height="30"/>
+                                        <state key="normal" title="Reload">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onReloadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4LI-8b-ATl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="rb1-DC-ib4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -38,14 +83,18 @@
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="EZP-Un-gi2"/>
                             <constraint firstItem="u6H-zD-gMR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="GbB-0m-hyF"/>
                             <constraint firstAttribute="centerX" secondItem="gLE-zB-TS1" secondAttribute="centerX" id="Gvw-Ir-Du6"/>
+                            <constraint firstItem="DWX-y2-AOX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="LfP-T1-FOv"/>
                             <constraint firstAttribute="centerX" secondItem="gF2-Av-qjy" secondAttribute="centerX" id="NZ7-Ff-PtC"/>
                             <constraint firstAttribute="centerY" secondItem="gF2-Av-qjy" secondAttribute="centerY" id="QKB-ID-n2p"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DWX-y2-AOX" secondAttribute="bottom" id="a8C-71-Ovh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u6H-zD-gMR" secondAttribute="trailing" constant="-16" id="gP8-ex-3bU"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u6H-zD-gMR" secondAttribute="bottom" id="i7Z-st-th1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DWX-y2-AOX" secondAttribute="trailing" constant="-16" id="hs3-8R-FcS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u6H-zD-gMR" secondAttribute="bottom" constant="106" id="i7Z-st-th1"/>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="m6y-oa-DtI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="WfU-7O-nax" id="agQ-hC-tiT"/>
                         <outlet property="networkActivityIndicator" destination="gF2-Av-qjy" id="hUX-J8-Tho"/>
                         <outlet property="urlTextField" destination="gLE-zB-TS1" id="UeQ-tN-znM"/>
                         <outlet property="webView" destination="u6H-zD-gMR" id="Znh-l8-ixc"/>
