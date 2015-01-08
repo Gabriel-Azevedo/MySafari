@@ -115,8 +115,12 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"Scrolled");
+    //self.urlTextField.hidden = true;
 }
 
+-(void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    self.urlTextField.hidden = false;
+}
 
 @end

@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6H-zD-gMR">
-                                <rect key="frame" x="0.0" y="64" width="320" height="398"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6H-zD-gMR">
+                                <rect key="frame" x="0.0" y="64" width="320" height="463"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="X7R-jM-lLE"/>
@@ -28,6 +28,11 @@
                                 <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <color key="color" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gLE-zB-TS1">
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWX-y2-AOX">
                                 <rect key="frame" x="0.0" y="523" width="320" height="45"/>
                                 <subviews>
@@ -82,26 +87,17 @@
                                     <constraint firstAttribute="height" constant="45" id="rb1-DC-ib4"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gLE-zB-TS1">
-                                <rect key="frame" x="16" y="72" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="3az-ki-qxp"/>
-                            <constraint firstItem="u6H-zD-gMR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ELD-uA-cKd"/>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="EZP-Un-gi2"/>
-                            <constraint firstItem="u6H-zD-gMR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="64" id="GbB-0m-hyF"/>
                             <constraint firstAttribute="centerX" secondItem="gLE-zB-TS1" secondAttribute="centerX" id="Gvw-Ir-Du6"/>
                             <constraint firstItem="DWX-y2-AOX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="LfP-T1-FOv"/>
                             <constraint firstAttribute="centerX" secondItem="gF2-Av-qjy" secondAttribute="centerX" id="NZ7-Ff-PtC"/>
                             <constraint firstAttribute="centerY" secondItem="gF2-Av-qjy" secondAttribute="centerY" id="QKB-ID-n2p"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DWX-y2-AOX" secondAttribute="bottom" id="a8C-71-Ovh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u6H-zD-gMR" secondAttribute="trailing" constant="-16" id="gP8-ex-3bU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DWX-y2-AOX" secondAttribute="trailing" constant="-16" id="hs3-8R-FcS"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u6H-zD-gMR" secondAttribute="bottom" constant="106" id="i7Z-st-th1"/>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="m6y-oa-DtI"/>
                         </constraints>
                     </view>
