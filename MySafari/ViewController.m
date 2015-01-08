@@ -25,11 +25,11 @@
     self.webView.scrollView.delegate = self;
 
 
-    self.webView.delegate = self;
-    self.urlTextField.delegate = self;
-    [self loadWebPage:@"http://butt.systems"];
+//    self.urlTextField.delegate = self;
+//    [self loadWebPage:@"http://butt.systems"];
     self.backButton.enabled = false;
 //    [self.scrollView setScrollEnabled:YES];
+    self.urlTextField.delegate = self;
 
 }
 
@@ -76,6 +76,14 @@
         self.forwardButton.enabled = YES;
     }
 
+    //Display current web page URL in textField
+    NSString *webPageURLString = self.webView.request.URL.absoluteString;
+    self.urlTextField.text = webPageURLString;
+
+    //Display current web page title in Navigation Bar
+    NSString *webPageTitleString = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.navigationItem.title = webPageTitleString;
+
 }
 
 - (IBAction)onBackButtonPressed:(UIButton *)sender
@@ -109,7 +117,6 @@
 {
     NSLog(@"Scrolled");
 }
-
 
 
 @end
