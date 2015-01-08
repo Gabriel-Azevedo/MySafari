@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
+@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
@@ -22,16 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.webView.scrollView.delegate = self;
+
+
     self.webView.delegate = self;
     self.urlTextField.delegate = self;
-
     [self loadWebPage:@"http://butt.systems"];
     self.backButton.enabled = false;
+//    [self.scrollView setScrollEnabled:YES];
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (![textField.text hasPrefix:@"http://"]) {
+    if (![textField.text hasPrefix:@"hrttp://"]) {
         NSString *httpString = @"http://";
         NSString *correctedString = [httpString stringByAppendingString:textField.text];
         [self loadWebPage:correctedString];
@@ -99,6 +103,11 @@
     alert.title = @"Coming soon!";
     [alert addButtonWithTitle:@"Dismiss"];
     [alert show];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"Scrolled");
 }
 
 
