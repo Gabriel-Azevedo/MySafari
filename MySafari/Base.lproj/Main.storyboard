@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6H-zD-gMR">
-                                <rect key="frame" x="0.0" y="64" width="320" height="463"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-fk-s7u">
+                                <rect key="frame" x="0.0" y="63" width="320" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="X7R-jM-lLE"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="dKl-8C-PpE"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-Av-qjy">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-Av-qjy">
                                 <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <color key="color" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
@@ -91,14 +91,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="3az-ki-qxp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="nGu-fk-s7u" secondAttribute="bottom" constant="44" id="9nY-AK-hVn"/>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="EZP-Un-gi2"/>
                             <constraint firstAttribute="centerX" secondItem="gLE-zB-TS1" secondAttribute="centerX" id="Gvw-Ir-Du6"/>
                             <constraint firstItem="DWX-y2-AOX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="LfP-T1-FOv"/>
                             <constraint firstAttribute="centerX" secondItem="gF2-Av-qjy" secondAttribute="centerX" id="NZ7-Ff-PtC"/>
                             <constraint firstAttribute="centerY" secondItem="gF2-Av-qjy" secondAttribute="centerY" id="QKB-ID-n2p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nGu-fk-s7u" secondAttribute="trailing" constant="-16" id="TCf-Pg-VeD"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DWX-y2-AOX" secondAttribute="bottom" id="a8C-71-Ovh"/>
+                            <constraint firstItem="nGu-fk-s7u" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="feg-nz-P8V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DWX-y2-AOX" secondAttribute="trailing" constant="-16" id="hs3-8R-FcS"/>
                             <constraint firstItem="gLE-zB-TS1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="m6y-oa-DtI"/>
+                            <constraint firstItem="nGu-fk-s7u" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="63" id="za7-7P-0gR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mDx-TR-ZxC"/>
@@ -107,7 +111,7 @@
                         <outlet property="forwardButton" destination="kZN-LG-R6e" id="ckc-R9-Jd2"/>
                         <outlet property="networkActivityIndicator" destination="gF2-Av-qjy" id="hUX-J8-Tho"/>
                         <outlet property="urlTextField" destination="gLE-zB-TS1" id="UeQ-tN-znM"/>
-                        <outlet property="webView" destination="u6H-zD-gMR" id="Znh-l8-ixc"/>
+                        <outlet property="webView" destination="nGu-fk-s7u" id="vex-XO-VfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

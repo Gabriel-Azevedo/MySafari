@@ -83,7 +83,6 @@
     //Display current web page title in Navigation Bar
     NSString *webPageTitleString = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.navigationItem.title = webPageTitleString;
-
 }
 
 - (IBAction)onBackButtonPressed:(UIButton *)sender
@@ -115,7 +114,17 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    //self.urlTextField.hidden = true;
+    CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+    if(translation.y < 0)
+    {
+        // react to dragging down
+        self.urlTextField.hidden = TRUE;
+    }
+    else
+    {
+        // react to dragging up
+        self.urlTextField.hidden = FALSE;
+    }
 }
 
 -(void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
