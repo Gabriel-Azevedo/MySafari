@@ -36,8 +36,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWX-y2-AOX">
                                 <rect key="frame" x="0.0" y="523" width="320" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-7O-nax">
-                                        <rect key="frame" x="9" y="7" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-7O-nax">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="DKB-h0-h8E"/>
+                                            <constraint firstAttribute="height" constant="30" id="cOV-XQ-uam"/>
+                                        </constraints>
                                         <state key="normal" title="&lt;">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -45,8 +49,12 @@
                                             <action selector="onBackButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3dZ-uf-RRD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZN-LG-R6e">
-                                        <rect key="frame" x="180" y="7" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZN-LG-R6e">
+                                        <rect key="frame" x="282" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Cw3-3E-AU9"/>
+                                            <constraint firstAttribute="height" constant="30" id="bMG-x7-lym"/>
+                                        </constraints>
                                         <state key="normal" title="&gt;">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -54,8 +62,12 @@
                                             <action selector="onForwardButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FLj-wk-CsJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvg-2D-25L">
-                                        <rect key="frame" x="104" y="7" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvg-2D-25L">
+                                        <rect key="frame" x="145" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="JTe-UJ-X64"/>
+                                            <constraint firstAttribute="height" constant="30" id="tGv-Y7-3dY"/>
+                                        </constraints>
                                         <state key="normal" title="X">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -63,8 +75,12 @@
                                             <action selector="onStopLoadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7SI-U4-JQS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU2-hA-MSD">
-                                        <rect key="frame" x="47" y="7" width="49" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FU2-hA-MSD">
+                                        <rect key="frame" x="67" y="8" width="49" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="eLF-Wm-TBs"/>
+                                            <constraint firstAttribute="width" constant="49" id="u6G-Zh-lL5"/>
+                                        </constraints>
                                         <state key="normal" title="Reload">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -72,8 +88,12 @@
                                             <action selector="onReloadButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4LI-8b-ATl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQI-00-Vtm">
-                                        <rect key="frame" x="142" y="8" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQI-00-Vtm">
+                                        <rect key="frame" x="211" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="OCD-3f-gTM"/>
+                                            <constraint firstAttribute="height" constant="30" id="kYa-JF-yeL"/>
+                                        </constraints>
                                         <state key="normal" title="+">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -82,9 +102,19 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kZN-LG-R6e" secondAttribute="bottom" constant="7" id="Aiw-Jg-loX"/>
+                                    <constraint firstAttribute="centerX" secondItem="Kvg-2D-25L" secondAttribute="centerX" id="Fxu-fF-6M1"/>
+                                    <constraint firstAttribute="bottom" secondItem="WfU-7O-nax" secondAttribute="bottom" constant="7" id="Ksx-Qf-kTw"/>
+                                    <constraint firstItem="FU2-hA-MSD" firstAttribute="leading" secondItem="WfU-7O-nax" secondAttribute="trailing" constant="29" id="R5Y-JF-Myt"/>
+                                    <constraint firstAttribute="trailing" secondItem="kZN-LG-R6e" secondAttribute="trailing" constant="8" id="Uxl-43-cWI"/>
+                                    <constraint firstAttribute="bottom" secondItem="zQI-00-Vtm" secondAttribute="bottom" constant="7" id="ccq-B5-lde"/>
+                                    <constraint firstItem="WfU-7O-nax" firstAttribute="leading" secondItem="DWX-y2-AOX" secondAttribute="leading" constant="8" id="mia-40-ha8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Kvg-2D-25L" secondAttribute="bottom" constant="7" id="qbM-5O-bbZ"/>
                                     <constraint firstAttribute="height" constant="45" id="rb1-DC-ib4"/>
+                                    <constraint firstItem="kZN-LG-R6e" firstAttribute="leading" secondItem="zQI-00-Vtm" secondAttribute="trailing" constant="41" id="wUY-lp-eUk"/>
+                                    <constraint firstAttribute="bottom" secondItem="FU2-hA-MSD" secondAttribute="bottom" constant="7" id="xXP-O9-qAp"/>
                                 </constraints>
                             </view>
                         </subviews>
